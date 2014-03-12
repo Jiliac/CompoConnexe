@@ -185,7 +185,7 @@ public class ListeEqui extends ArrayList<ArrayList<Integer>> {
 		return retour;
 	}
 
-	public ArrayList<Integer> traiter(ArrayList<Integer> aAjouter) {
+	private ArrayList<Integer> traiter(ArrayList<Integer> aAjouter) {
 		ArrayList<Integer> copie = new ArrayList<Integer>();
 		for (int i : aAjouter)
 			if (!this.isIn(i, copie))
@@ -201,7 +201,7 @@ public class ListeEqui extends ArrayList<ArrayList<Integer>> {
 		return retour;
 	}
 
-	public int getMin(int[] numListe) {
+	private int getMin(int[] numListe) {
 		int retour = Integer.MAX_VALUE;
 		for (int i : numListe)
 			if (i < retour && i != -1)
@@ -209,7 +209,7 @@ public class ListeEqui extends ArrayList<ArrayList<Integer>> {
 		return retour;
 	}
 
-	public int getMax(int[] numListe) {
+	private int getMax(int[] numListe) {
 		int retour = Integer.MIN_VALUE;
 		for (int i : numListe)
 			if (i > retour && i != -1)
