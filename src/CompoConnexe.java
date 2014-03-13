@@ -17,8 +17,8 @@ public class CompoConnexe {
 	}
 
 	public ArrayList<ArrayList<Cross>> getCompo() {
-		int maxY = tab.length;
-		int maxX = tab[0].length;
+		int maxY = tab[0].length;
+		int maxX = tab.length;
 
 		ListeEqui listeEqui = new ListeEqui();
 
@@ -28,7 +28,7 @@ public class CompoConnexe {
 				Cross cross = tab[x][y];
 				cross.setNb(maxNb);
 
-				ArrayList<Cross> voisins = cross.getVoisin(cross, tab);
+				ArrayList<Cross> voisins = cross.getVoisin(tab);
 				if (!voisins.isEmpty()) {
 					cross.setNb(voisins.get(0).getNb());
 					ArrayList<Integer> aAjouter = new ArrayList<Integer>();
@@ -37,9 +37,9 @@ public class CompoConnexe {
 					listeEqui.add(aAjouter);
 				} else {
 					cross.setNb(maxNb);
-					ArrayList<Integer> newListe = new ArrayList();
-					newListe.add(maxNb);
-					listeEqui.add(newListe);
+					ArrayList<Integer> aAjouter = new ArrayList<Integer>();
+					aAjouter.add(maxNb);
+					listeEqui.add(aAjouter);
 					maxNb++;
 				}
 			}
